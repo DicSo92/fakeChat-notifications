@@ -1,0 +1,26 @@
+html, body {
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+}
+.overUser {
+    background-color: rgb(192, 219, 237);
+}
+.containerChat {
+    height: 400px;
+}
+
+
+.fadeT-enter-active,
+.fadeT-leave-active {
+    transition: all .8s ease-in;
+}
+.fadeT-enter {
+    opacity: 0;
+    transform: translateY(-10%)
+}
+.fadeT-leave-active {
+    opacity: 0;
+    transform: translateY(15%)
+}

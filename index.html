@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Vue- Chat</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- This div which is the entire app will be controlled by Vue -->
+<div id="app" class="h-full w-full flex flex-col items-center p-10 relative">
+    <transition name="fadeT" mode="out-in" o>
+        <notifications v-bind:user="this.user" v-if="this.user !== null" :key="this.user.name"></notifications>
+    </transition>
+    <h1 class="text-6xl font-bold mb-12">Vue-Chat</h1>
+    <div class="flex w-full h-full border border-gray-600 rounded">
+        <div class="w-1/4 border-r border-gray-600">
+            <div class="bg-white flex items-center p-2 border-b border-gray-600">
+                <h1 class="w-1/2 font-bold">Friend List</h1>
+                <input class="w-1/2 flex-shrink bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" placeholder="Chercher...">
+            </div>
+            <user-list v-bind:users="this.users"></user-list>
+        </div>
+        <div class="w-3/4 bg-gray-300">
+            <chat></chat>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="module" src="index.js"></script>
+</html>
